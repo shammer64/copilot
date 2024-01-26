@@ -16,29 +16,46 @@ class DoublyLinkedListTest {
         assertEquals(1, list.size());
     }
 
-//    @Test
-//    public void testAddTwoElements() {
-//        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-//        list.add(1);
-//        list.add(2);
-//        assertEquals(2, list.size());
-//    }
-//
-//    @Test
-//    public void testGetFirstElement() {
-//        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-//        list.add(1);
-//        assertEquals(1, list.get(0));
-//    }
-//
-//    @Test
-//    public void testGetSecondElement() {
-//        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-//        list.add(1);
-//        list.add(2);
-//        assertEquals(2, list.get(1));
-//    }
-//
+    @Test
+    public void testAddTwoElements() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.add(1);
+        list.add(2);
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void testGetElementFromEmpty() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.get(0);
+        });
+    }
+
+    @Test
+    public void testGetElementWithBadIndex() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.add(1);
+        Exception e = assertThrows(IndexOutOfBoundsException.class, () -> {
+            list.get(1);
+        });
+    }
+
+    @Test
+    public void testGetFirstElement() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.add(1);
+        assertEquals(1, list.get(0));
+    }
+
+    @Test
+    public void testGetSecondElement() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.add(1);
+        list.add(2);
+        assertEquals(2, list.get(1));
+    }
+
 //    @Test
 //    public void testRemoveFirstElement() {
 //        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
