@@ -3,7 +3,7 @@ public class DoublyLinkedList<T> {
     private int size = 0;
 
     public boolean isEmpty() {
-        return true;
+        return size == 0;
     }
 
     public void add(T item) {

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DoublyLinkedListTest {
 
     @Test
-    public void testListCreation() {
+    public void testNewListIsEmpty() {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         assertTrue(list.isEmpty());
     }
@@ -14,6 +14,13 @@ class DoublyLinkedListTest {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.add(1);
         assertEquals(1, list.size());
+    }
+
+    @Test
+    public void testSingleElementListIsNotEmpty() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        list.add(1);
+        assertFalse(list.isEmpty());
     }
 
     @Test
