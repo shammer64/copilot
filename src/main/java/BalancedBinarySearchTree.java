@@ -9,6 +9,10 @@ public class BalancedBinarySearchTree<T> {
         root = new BinaryTreeNode<>(newItem);
     }
 
+    public int size() {
+        return isEmpty() ? 0 : 1;
+    }
+
     private static class BinaryTreeNode<T> {
         private final T item;
 
